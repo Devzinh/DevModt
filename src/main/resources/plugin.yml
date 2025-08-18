@@ -1,0 +1,29 @@
+name: DevModt
+version: '${version}'
+main: me.devplugins.devModt.DevModt
+api-version: '1.21'
+prefix: [DevModt]
+authors: [DevPlugins]
+description: Sistema de gerenciamento de MOTD dinamico para Minecraft.
+website: https://discord.gg/A4F9jtGhFU
+
+commands:
+  devmotd:
+    description: Sistema profissional de MOTD dinamico
+    usage: /devmotd <reload|setevent|clearevent|preview|stats|metrics|history|placeholder|test|update|info>
+    permission: devmotd.admin
+    aliases: [dmotd, dynamicmotd]
+
+permissions:
+  devmotd.admin:
+    description: Permite usar todos os comandos do DevModt
+    default: op
+  devmotd.api:
+    description: Permite usar a API do DevModt
+    default: false
+  devmotd.stats:
+    description: Permite ver estatisticas do DevModt
+    default: op
+  devmotd.update:
+    description: Recebe notificacoes de atualizacao
+    default: op
