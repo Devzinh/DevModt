@@ -1,0 +1,202 @@
+# DevModt v2.0 - Sistema Profissional de MOTD Dinamico
+# Desenvolvido pela DevPlugins Team
+# Discord: https://discord.gg/A4F9jtGhFU
+
+# Configuracoes gerais
+general:
+  # Ativar logs detalhados no console
+  enable_logging: true
+  # Ativar verificacao automatica de atualizacoes
+  check_updates: true
+  # Ativar mensagens por horario
+  time_based_enabled: true
+  # Ativar eventos automaticos
+  events_enabled: true
+  # Ativar metricas de performance
+  metrics_enabled: true
+  # Ativar banco de dados para historico
+  database_enabled: true
+
+# Mensagens por horario do dia (baseado no horario real do sistema)
+time_messages:
+  morning: "&e&l🌅 &6&lBOM DIA! &e&l🌅\n&7Comece bem o seu dia no &bDevTestes&7! &8| &7Hora Real: &e{time}"
+  afternoon: "&6&l☀ &e&lBOA TARDE! &6&l☀\n&7Aproveite a tarde no &bDevTestes&7! &8| &7Online: &a{players_online}"
+  evening: "&c&l🌆 &6&lBOA NOITE! &c&l🌆\n&7Relaxe e divirta-se no &bDevTestes&7! &8| &7Hora Real: &e{time}"
+  night: "&9&l🌙 &b&lBOA MADRUGADA! &9&l🌙\n&7Para os corajosos noturnos do &bDevTestes&7! &8| &7Hora Real: &e{time}"
+
+# Horarios do sistema (horario real - formato 24h)
+time_ranges:
+  morning: "06:00-11:59"    # Manha
+  afternoon: "12:00-17:59"  # Tarde
+  evening: "18:00-22:59"    # Noite
+  night: "23:00-05:59"      # Madrugada
+
+# Eventos especiais
+events:
+  natal:
+    name: "Natal"
+    start_date: "12-20"
+    end_date: "12-26"
+    message: "&c&l🎄 &a&lFELIZ NATAL! &c&l🎄\n&7Celebre conosco! &8| &7Evento: &dNatal"
+  
+  ano_novo:
+    name: "Ano Novo"
+    start_date: "12-31"
+    end_date: "01-02"
+    message: "&e&l🎆 &6&lFELIZ ANO NOVO! &e&l🎆\n&7Novo ano, novas aventuras! &8| &7Evento: &dAno Novo"
+  
+  pascoa:
+    name: "Pascoa"
+    start_date: "03-25"
+    end_date: "04-05"
+    message: "&d&l🐰 &5&lFELIZ PASCOA! &d&l🐰\n&7Renovacao e esperanca! &8| &7Evento: &dPascoa"
+  
+  carnaval:
+    name: "Carnaval"
+    start_date: "02-10"
+    end_date: "02-17"
+    message: "&e&l🎭 &6&lVIVA O CARNAVAL! &e&l🎭\n&7E tempo de festa! &8| &7Evento: &dCarnaval"
+  
+  dia_das_maes:
+    name: "Dia das Maes"
+    start_date: "05-12"
+    end_date: "05-12"
+    message: "&c&l❤ &d&lFELIZ DIA DAS MAES! &c&l❤\n&7Homenagem as maes! &8| &7Evento: &dDia das Maes"
+  
+  festa_junina:
+    name: "Festa Junina"
+    start_date: "06-20"
+    end_date: "06-30"
+    message: "&6&l🌽 &e&lARRAIA! &6&l🌽\n&7Viva Sao Joao! &8| &7Evento: &dFesta Junina"
+  
+  dia_dos_pais:
+    name: "Dia dos Pais"
+    start_date: "08-11"
+    end_date: "08-11"
+    message: "&9&l👨 &b&lFELIZ DIA DOS PAIS! &9&l👨\n&7Homenagem aos pais! &8| &7Evento: &dDia dos Pais"
+  
+  independencia:
+    name: "Independencia do Brasil"
+    start_date: "09-07"
+    end_date: "09-07"
+    message: "&a&l🇧🇷 &2&lVIVA O BRASIL! &a&l🇧🇷\n&7Independencia ou Morte! &8| &7Evento: &dIndependencia"
+  
+  dia_das_criancas:
+    name: "Dia das Criancas"
+    start_date: "10-12"
+    end_date: "10-12"
+    message: "&b&l🎈 &3&lDIA DAS CRIANCAS! &b&l🎈\n&7Diversao garantida! &8| &7Evento: &dDia das Criancas"
+  
+  halloween:
+    name: "Halloween"
+    start_date: "10-31"
+    end_date: "10-31"
+    message: "&4&l🎃 &6&lHALLOWEEN! &4&l🎃\n&7Doces ou travessuras! &8| &7Evento: &dHalloween"
+  
+  proclamacao_republica:
+    name: "Proclamacao da Republica"
+    start_date: "11-15"
+    end_date: "11-15"
+    message: "&e&l⭐ &6&lREPUBLICA! &e&l⭐\n&7Viva a Republica! &8| &7Evento: &dProclamacao"
+  
+  consciencia_negra:
+    name: "Consciencia Negra"
+    start_date: "11-20"
+    end_date: "11-20"
+    message: "&8&l✊ &7&lCONSCIENCIA NEGRA! &8&l✊\n&7Respeito e igualdade! &8| &7Evento: &dConsciencia Negra"
+  
+  valentine:
+    name: "Dia dos Namorados"
+    start_date: "02-14"
+    end_date: "02-14"
+    message: "&c&l💕 &d&lDIA DOS NAMORADOS! &c&l💕\n&7Amor esta no ar! &8| &7Evento: &dValentine's Day"
+  
+  st_patrick:
+    name: "St. Patrick's Day"
+    start_date: "03-17"
+    end_date: "03-17"
+    message: "&a&l🍀 &2&lST. PATRICK'S DAY! &a&l🍀\n&7Que a sorte esteja com voce! &8| &7Evento: &dSt. Patrick"
+
+# Evento customizado atual (definido via comando)
+current_custom_event:
+  name: ""
+  message: ""
+  active: false
+
+# Configuracoes de performance
+performance:
+  # Duracao do cache em segundos
+  cache_duration_seconds: 30
+  # Ativar processamento assincrono
+  async_processing: true
+  # Tamanho maximo do cache
+  max_cache_size: 100
+  # Ativar metricas de performance
+  enable_metrics: true
+
+# Prioridades para hierarquia de MOTD (maior numero = maior prioridade)
+priorities:
+  custom_event: 100
+  special_event: 90
+  time: 70
+
+# Configuracoes de compatibilidade
+compatibility:
+  # Permitir que outros plugins alterem o MOTD
+  allow_external_override: true
+  # Prioridade minima para override externo
+  external_override_priority: 110
+  # Tempo de espera para conflitos (ms)
+  conflict_resolution_delay: 1000
+
+# Configuracoes avancadas
+advanced:
+  # Ativar API para outros plugins
+  enable_api: true
+  # Ativar eventos customizados do Bukkit
+  fire_bukkit_events: true
+  # Ativar verificacao de atualizacoes
+  check_updates: true
+  # Ativar backup automatico de configuracoes
+  auto_backup_config: true
+  # Maximo de registros no historico
+  max_history_records: 1000
+  # Intervalo de limpeza do banco (em horas)
+  database_cleanup_interval: 24
+  # Ativar API publica para outros plugins
+  enable_api: true
+  # Ativar eventos customizados da API
+  enable_api_events: true
+  # Timeout para verificacao de atualizacoes (segundos)
+  update_check_timeout: 10
+
+# Configuracoes de performance
+performance:
+  # Cache de placeholders (em segundos)
+  placeholder_cache_duration: 30
+  # Maximo de atualizacoes por minuto
+  max_updates_per_minute: 10
+  # Ativar processamento assincrono
+  async_processing: true
+
+# Placeholders avancados disponiveis:
+# {players_online} - Jogadores online
+# {max_players} - Maximo de jogadores
+# {weather} - Clima atual
+# {event_name} - Nome do evento ativo
+# {time} - Hora atual (HH:mm)
+# {date} - Data atual (dd/MM/yyyy)
+# {full_date} - Data e hora completa
+# {uptime} - Tempo de atividade do servidor
+# {server_name} - Nome do servidor
+# {server_version} - Versao do servidor
+# {bukkit_version} - Versao do Bukkit
+# {world_count} - Numero de mundos
+# {plugin_count} - Numero de plugins
+# {tps} - TPS atual do servidor
+# {memory_used} - Memoria RAM usada
+# {memory_max} - Memoria RAM maxima
+# {cpu_usage} - Uso de CPU
+# {day_of_week} - Dia da semana
+# {month} - Mes atual
+# {year} - Ano atual
